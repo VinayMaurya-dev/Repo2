@@ -1,0 +1,86 @@
+<html>
+<head>
+<style>
+h1{
+font-size:44px;
+box-shadow:0px 0px 10px blue,0px 0px 10px red;
+text-shadow:0px 0px 10px blue,0px 0px 10px red;
+}
+#outer{
+height:650px;
+width:1300px;
+box-shadow:0px 0px 10px blue,0px 0px 10px red;
+border:5px groove blue;
+border-radius:10px;
+margin:10px auto;
+padding:10px;
+box-sizing:border-box;
+}
+.box{
+height:280px;
+width:400px; 
+border-radius:10px;
+float:left;
+margin:10px;
+}
+img{
+height:100%;
+width:100%;
+border-radius:10px;
+border:3px solid black;
+padding:10px;
+box-sizing:border-box;
+box-shadow:0px 0px 10px 2px blue inset;
+}
+#modalid{
+height:95%;
+width:100%;
+border-radius:10px;
+border:3px solid black;
+padding:10px;
+box-sizing:border-box;
+box-shadow:0px 0px 10px 2px blue inset;
+}
+#modal{
+width:100%;
+height:750px;
+background:rgba(0,0,0,.5);
+position:fixed;
+top:0px;
+display:none;
+}
+#inner{
+height:400px;
+width:680px; 
+border-radius:10px;
+background:white;
+margin:100px auto;
+}
+</style>
+</head>
+<body>
+<center><h1>IMAGE GALLARY</h1></center><hr/>
+<div id="outer">
+<div class="box"><img src="a.jpg" onclick="demo(this)"/></div>
+<div class="box"><img src="b.jpg"onclick="demo(this)"/></div>
+<div class="box"><img src="c.jpg"onclick="demo(this)"/></div>
+<div class="box"><img src="d.jpg"onclick="demo(this)"/></div>
+<div class="box"><img src="e.jpg"onclick="demo(this)"/></div>
+<div class="box"><img src="f.jpg"onclick="demo(this)"/></div>
+</div>
+<!--start modal-->
+<div id="modal">
+<div id="inner"><a href=""><span style="color:red;float:right;font-size:22px;margin-right:10px;">X</span></a><img src="a.jpg" id="modalid"/></div>
+</div>
+<!--end modal -->
+<script>
+function demo(x)
+{
+var m=document.getElementById("modal")
+var mimg=document.getElementById("modalid")
+m.style.display="block";
+mimg.src=x.src;
+}
+</script>
+</body>
+</html>
